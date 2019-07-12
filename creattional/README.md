@@ -52,3 +52,10 @@
 * 产品的Builder提供产品所有属性的set方法
 * 调用Builder.build()方法时才实例化产品实例
 * 链式调用，使用优雅，可读性好
+```
+Product.Builder builder = new Product.Builder();
+Product product = builder.setName("产品1")
+                .setWeight(100)
+                .build();
+product.use();
+```
