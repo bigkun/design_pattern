@@ -17,7 +17,14 @@ public class Product {
         System.out.println("Name: " + name + " Weight: " + weight);
     }
 
-    public static class Builder {
+    /**
+     * Builder 可以作为内部类，也可以是单独的类
+     * 另外，可以为{@link Product}类提供一个static方法来实例化builder，然后通过获得的builder再构建产品实例
+     * {@code public static Builder newBuilder() {
+     * return new Builder();
+     * }}
+     */
+    public final static class Builder {
         private String name;
         private int weight;
 
