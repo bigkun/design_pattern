@@ -5,7 +5,7 @@ GOF把设计模式分为三类：创建型、行为型、结构型。
 - [x] 1.Factory Method 
 - [x] 2.Abstract Factory
 - [x] 3.Builder
-- [ ] 4.Singleton
+- [x] 4.Singleton
 - [ ] 5.Prototype
 ## 2. 行为型(behavioral)
 - [ ] 1.Template

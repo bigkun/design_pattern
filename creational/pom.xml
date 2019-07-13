@@ -17,6 +17,9 @@
         <module>simple-factory</module>
         <module>builder</module>
         <module>builder-build</module>
+        <module>enum-singleton</module>
+        <module>static-inner-class-singleton</module>
+        <module>double-checked-locking-singleton</module>
     </modules>
 
 
