@@ -131,7 +131,7 @@ public class Singleton {
 }
 ```
 > 这样就降低了锁竞争的发生概率，但是如果发生了竞争，线程1得到锁对singleton进行了实例化，而线程2处于等待，待线程1释放锁后，线程2并没有再次检查singleton的
-状态，会继续为singleton实例化。这就导致了会有小概率singleton被多次实例化。所有需要在实例化之间再检查一遍singleton是否为null.
+状态，会继续为singleton实例化。这就导致了会有小概率singleton被多次实例化。所有需要在实例化之前再检查一遍singleton是否为null.
 ```
 public class Singleton {
     private static Singleton singleton = null;
