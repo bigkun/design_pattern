@@ -207,3 +207,24 @@ enum Singleton {
 * [Effective Java](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-3-Enforce-the-singleton-property-with-a-private-constructor-or-an-enum-type.md)
 * [整明白枚举单例模式](https://blog.csdn.net/tyn243222791/article/details/77712520)
 * [为什么我墙裂建议大家使用枚举来实现单例](http://www.hollischuang.com/archives/2498)
+### 原型模式 Prototype
+简单理解就是克隆复制。原型模式在概念上分为：Prototype(原型，声明克隆方法或接口，可以是接口、抽象类、具体类)、ConcretePrototype(具体的原型, 实现克隆方法)。
+
+在Java语言中，Object提供了clone()方法用于实现克隆。需要实现克隆/拷贝的类需要实现Cloneable接口。
+
+针对克隆，有**浅拷贝**和**深拷贝**之分，浅拷贝是分配一份与原对象一样的内存空间，然后将原对象内存空间内容，复制到现有内存空间内。所有如果域成员有引用对象，则指向地址跟原对象域成员一致，这就是为什么clone是浅拷贝的原因。
+
+深拷贝是不仅内存地址不一样，所有域(主要是引用对象)内存地址也不一样。
+
+> 另外，Java社区，对没有实现的Cloneable接口的对象的复制，提供了很多工具来实现bean复制，
+例如Apache Commons BeanUtils, Spring BeanUtils， Cglib的BeanCopier等，这些大多数都是浅拷贝。
+深拷贝一般都是需要自己实现，最高效的办法就是序列化后反序列化(需要类定义时实现 Serializable)。
+
+* [Dozer](https://github.com/DozerMapper/dozer) [![Release Version](https://img.shields.io/maven-central/v/com.github.dozermapper/dozer-core.svg?maxAge=2592000)](https://mvnrepository.com/artifact/com.github.dozermapper/dozer-core)
+* [Orika](http://orika-mapper.github.io/orika-docs/intro.html)
+* [BeanCopier](https://github.com/cglib/cglib/blob/master/cglib/src/main/java/net/sf/cglib/beans/BeanCopier.java)
+* [hutool ObjectUtil](https://github.com/looly/hutool/blob/v4-master/hutool-core/src/main/java/cn/hutool/core/util/ObjectUtil.java)
+* [spring BeanUtils](https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/java/org/springframework/beans/BeanUtils.java)
+* [apache BeanUtils](https://github.com/apache/commons-beanutils/blob/master/src/main/java/org/apache/commons/beanutils2/BeanUtils.java)
+##### 参考
+1. [从JVM角度看看Java的clone操作](https://www.jianshu.com/p/309f80f33190)
