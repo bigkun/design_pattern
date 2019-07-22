@@ -20,6 +20,8 @@
         <module>enum-singleton</module>
         <module>static-inner-class-singleton</module>
         <module>double-checked-locking-singleton</module>
+        <module>none-cloneable-prototype</module>
+        <module>cloneable-and-beanutils-prototype</module>
     </modules>
 
 
