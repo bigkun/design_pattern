@@ -65,8 +65,10 @@ product.use();
 单例模式依赖Java语言的两个特性一个是static, 一个是private 构造方法。 
 * static 保证单例及对象的生命周期，在classloader生命周期内，单例对象不被GC
 * private保证对象实例化受限制，对象不会被外部随意实例化(new)
+
 单例模式面临2个挑战：**实例化时机**以及**并发**。
 
+#### 饿汉模式
 ```
 public class Singleton {
     private static Singleton singleton = new Singleton(); // static 保证了类肯定会被实例化，且只有一个，并且classloader生命周期内一直存活。
@@ -78,7 +80,7 @@ public class Singleton {
 ```
 > 这种在类加载时就实例化的方式解决了并发问题，但是副作用就是，不管是否会被使用，都会在类加载的时候分配堆内存进行对象实例化。
 
-#### 延迟加载/懒加载 lazy load
+#### 延迟加载/懒加载 lazy load (懒汉模式)
 ##### 1. 简单的延迟加载实现
 ```
 public class Singleton {
@@ -122,7 +124,7 @@ public class Singleton {
     private Singleton() {}
     public static Singleton getInstance() {
         if (singleton == null) { 
-            synchronized (Singleton.class) { // 此次也可以 sychronized(obj) 一个静态对象
+            synchronized (Singleton.class) { // 此处也可以 sychronized(obj) 一个静态对象
                 singleton = new Singleton(); 
             }            
         }
