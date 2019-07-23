@@ -151,7 +151,7 @@ public class Singleton {
     }
 }
 ```
-> 双重检查锁定(DCL)已经相当完美了，但是还是有瑕疵，那就是编译器重排以及CPU的乱序执行会导致并发的线程有可能获得未完成初始化完成的对象。
+> 双重检查锁定(DCL)已经相当完美了，但是还是有瑕疵，那就是编译器重排以及CPU的乱序执行会导致并发的线程有可能获得未完全初始化完成的对象。
 
 参考：[单例模式中的volatile关键字](https://www.cnblogs.com/keeya/p/9260565.html)
 
@@ -214,7 +214,7 @@ enum Singleton {
 
 在Java语言中，Object提供了clone()方法用于实现克隆。需要实现克隆/拷贝的类需要实现Cloneable接口。
 
-针对克隆，有**浅拷贝(shallow copy)**和**深拷贝(deep copy)**之分，浅拷贝是分配一份与原对象一样的内存空间，然后将原对象内存空间内容，复制到现有内存空间内。所有如果域成员有引用对象，则指向地址跟原对象域成员一致，这就是为什么clone是浅拷贝的原因。
+针对克隆，有**浅拷贝(shallow copy)**和**深拷贝(deep copy)**之分，浅拷贝是分配一份与原对象一样的内存空间，然后将原对象内存空间内容，复制到现有内存空间内。所以如果域成员有引用对象，则指向地址跟原对象域成员一致，这就是为什么clone是浅拷贝的原因。
 
 深拷贝是不仅内存地址不一样，所有域(主要是引用对象)内存地址也不一样。
 
@@ -222,11 +222,12 @@ enum Singleton {
 例如Apache Commons BeanUtils, Spring BeanUtils， Cglib的BeanCopier等，这些大多数都是浅拷贝。
 深拷贝一般都是需要自己实现，最高效的办法就是序列化后反序列化(需要类定义时实现 Serializable)。
 
+一些Bean复制或类映射的工具：
 * [Dozer](https://github.com/DozerMapper/dozer) [![Release Version](https://img.shields.io/maven-central/v/com.github.dozermapper/dozer-core.svg?maxAge=2592000)](https://mvnrepository.com/artifact/com.github.dozermapper/dozer-core)
 * [Orika](http://orika-mapper.github.io/orika-docs/intro.html)
-* [BeanCopier](https://github.com/cglib/cglib/blob/master/cglib/src/main/java/net/sf/cglib/beans/BeanCopier.java)
-* [hutool ObjectUtil](https://github.com/looly/hutool/blob/v4-master/hutool-core/src/main/java/cn/hutool/core/util/ObjectUtil.java)
-* [spring BeanUtils](https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/java/org/springframework/beans/BeanUtils.java)
-* [apache BeanUtils](https://github.com/apache/commons-beanutils/blob/master/src/main/java/org/apache/commons/beanutils2/BeanUtils.java)
+* [Cglib BeanCopier](https://github.com/cglib/cglib/blob/master/cglib/src/main/java/net/sf/cglib/beans/BeanCopier.java)
+* [Hutool ObjectUtil](https://github.com/looly/hutool/blob/v4-master/hutool-core/src/main/java/cn/hutool/core/util/ObjectUtil.java)
+* [Spring BeanUtils](https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/java/org/springframework/beans/BeanUtils.java)
+* [Apache BeanUtils](https://github.com/apache/commons-beanutils/blob/master/src/main/java/org/apache/commons/beanutils2/BeanUtils.java)
 ##### 参考
 1. [从JVM角度看看Java的clone操作](https://www.jianshu.com/p/309f80f33190)
