@@ -43,6 +43,6 @@ Java并不支持多重类继承，因此类适配器模式会有些受限，比�
 4. ConcreteImplementor(具体实现者): 实现Implementor定义的接口。
 
 
-![]()
+![](https://gitee.com/bigkun/design_pattern/raw/master/structural/bridge.png)
 
 > RefinedAbstraction 可以横向扩展，ConcreteImplementor也可以横向扩展，使用时动态的组合两者。
