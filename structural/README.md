@@ -1,6 +1,6 @@
 ## 结构型设计模式
 1. Adapter
-2. Bridger
+2. Bridge
 3. Composite
 4. Decorator
 5. Facade
@@ -10,6 +10,8 @@
 ### 适配器模式
 Adapter模式也称作Wrapper模式。现有代码无法直接使用，经过一定的转换或包装之后就能够使用的模式成为适配器模式。
 将现有接口转换为客户类所期望的接口，实现了对现有类的复用。
+
+> 将两个不兼容的类结合在一起使用，属于结构型模式，需要有Adaptee和Adapter两个角色。
 
 
 Adapter模式中的概念：
