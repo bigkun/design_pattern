@@ -30,3 +30,19 @@ Java并不支持多重类继承，因此类适配器模式会有些受限，比�
 1. 复用现有代码，但需要稍作调整时：
 使用Adapter模式可以在完全不改变现有代码的前提下使现有代码适配于新的接口。
 2. 版本升级与兼容：
+
+### 桥接模式
+如果存在两个或以上独立变化的维度，只依赖继承，会让子类繁多、继承层次加深，增加代码复杂度。通过使用桥接模式，使得各个维度独立扩展，最后动态进行组合。
+
+桥接模式将抽象部分和实现部分分离，使它们可以独立地变化。
+
+桥接模式角色：
+1. Abstraction(抽象类): 用于定义抽象类的接口，一般是抽象类而不是接口.保存Implementor实例，并借由Implementor实现功能
+2. RefinedAbstraction(改善后的抽象类): 在Abstraction的基础上增加新功能。
+3. Implementor(实现者): 定义实现接口，接口不一定完全与Abstraction接口一致，Implementor接口仅提供最基本的操作，而Abstraction接口可能会做更多更复杂的操作。
+4. ConcreteImplementor(具体实现者): 实现Implementor定义的接口。
+
+
+![]()
+
+> RefinedAbstraction 可以横向扩展，ConcreteImplementor也可以横向扩展，使用时动态的组合两者。
