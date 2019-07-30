@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/bigkun/design_pattern.svg?branch=master)](https://travis-ci.org/bigkun/design_pattern)
 # 设计模式
 GoF把设计模式分为三类：创建型、行为型、结构型。
 
