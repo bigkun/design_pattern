@@ -22,7 +22,7 @@ GoF把设计模式分为三类：创建型、行为型、结构型。
 - [ ] 11.Iterator
 ## 3. 结构型(structural)
 - [x] 1.Facade
-- [ ] 2.Proxy
+- [x] 2.Proxy
 - [x] 3.Adapter
 - [x] 4.Composite
 - [x] 5.Decorator
