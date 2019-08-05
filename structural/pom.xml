@@ -19,6 +19,8 @@
         <module>facade</module>
         <module>flyweight</module>
         <module>proxy</module>
+        <module>jdk-proxy</module>
+        <module>cglib-proxy</module>
     </modules>
 
 

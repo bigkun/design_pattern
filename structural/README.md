@@ -125,6 +125,25 @@ Flyweight的意思是“轻量级”，是拳击比赛中选手体重最轻的�
 代理模式还可以细分一下几种：
 1. Remote Proxy(远程代理): 对请求及参数进行编码，并向不同地址空间中的实体发送已编码的请求。
 2. Virtual Proxy(虚拟代理): 如果需要创建一个资源消耗较大的对象，先创建一个消耗相对较小的对象来表示。真实对象在需要时才会被真正创建。
+    图片列表加载图片时的图片占位符，就是一种虚拟代理。
 3. Protect Proxy(保护代理): 检查调用者是否具有实现一个请求所需的访问权限。
 4. Cache Proxy(缓冲代理): 为目标操作结果提供临时的存储空间，以便多个客户端可以共享这些结果。
 5. Smart Reference Proxy(智能引用代理): 当一个对象被引用时，提供一些额外的操作，例如将对象被调用的次数记录下来等。
+
+
+从实现方式上分为：
+* 静态代理：静态代理可以通过继承或聚合的方式实现。代理关系是绑定的
+* 动态代理：代理关系在运行时动态绑定。
+
+#### JDK Proxy
+JDK中提供了Proxy和InvocationHandler来实现动态代理。步骤：
+1. 实现InvocationHandler，实现invoke方法
+2. 创建被代理的类及接口
+3. 调用Proxy静态方法，创建代理类
+#### Cglib Proxy
+1. 实现MethodInterceptor
+2. Enhancer enhancer = new Enhancer();
+3. enhancer.setSuperclass(class);
+4. enhancer.create(); 得到被代理的对象
+
+* 慕课网视频:[《模式的秘密——代理模式》](https://www.imooc.com/video/4550)
