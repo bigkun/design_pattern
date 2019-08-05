@@ -12,7 +12,7 @@ GoF把设计模式分为三类：创建型、行为型、结构型。
 - [ ] 1.Template
 - [ ] 2.Memento
 - [ ] 3.Observer
-- [ ] 4.Chain of Responsibility
+- [x] 4.Chain of Responsibility
 - [ ] 5.Command
 - [ ] 6.State
 - [ ] 7.Strategy
