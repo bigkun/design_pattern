@@ -16,7 +16,7 @@ GoF把设计模式分为三类：创建型、行为型、结构型。
 - [x] 5.Command
 - [ ] 6.State
 - [ ] 7.Strategy
-- [ ] 8.Mediator
+- [x] 8.Mediator
 - [x] 9.Interpreter
 - [ ] 10.Visitor
 - [x] 11.Iterator
