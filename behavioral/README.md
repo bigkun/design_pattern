@@ -99,3 +99,12 @@
 1. Context(上下文): 持有表示当前状态的ConcreteState对象。
 2. State(抽象状态类): 
 3. ConcreteState(具体状态类):
+
+### 策略模式
+策略模式将算法和环境分开，不同的算法可以相互替换。
+
+策略模式中的概念：
+1. Context(上下文): 维持引用一个策略对象
+2. Strategy(抽象策略类): 定义算法接口
+3. ConcreteStrategy(具体策略类): 具体实现算法
+
