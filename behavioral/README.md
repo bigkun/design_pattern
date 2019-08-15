@@ -119,5 +119,19 @@
 
 模板方法模式适应于有固定流程步骤的场景，但是不同情况下各环节由于细微差异。
 
+### 访问者模式
 
+1. visitor(访问者): 声明访问各种元素的visit方法
+2. ConcreteVisitor: 实现各种访问接口。
+3. Element(元素): 声明接受访问者的accept方法，参数是visitor
+4. ConcreteElement: 负责实现accept方法
+5. ObjectStructure: 负责处理Element角色的集合。
+
+**双重分发**
+* element.accept(visitor)
+* visitor.visit(element)
+
+element接受visitor,而visitor又访问element. 将这种消息分发称为双重分发(double dispatch)
+
+> 访问者模式对增加visitor容易，对增加element困难，每增加一个element，就需要每个visitor都要添加对新增的element的visit方法。
 
